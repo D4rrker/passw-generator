@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Generador de contraseñas.">
+    <title>Generador de contraseñas</title>
+    <link rel="stylesheet" href="estilos.css" />
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    
+    <div id="main-container">
+
+      <div class="container">
+        <div class="container-header">
+          <div class="container-header-logo">
+            <img src="svg/padlock.svg" alt="Logo">
+          </div> 
+          <div class="container-header-title">
+            <h1>Generador de Constraseñas</h1>
+          </div>
+        </div>
+        
+        <div class="container-content">
+          <div class="content-input-copy">
+            <div class="content-input">
+              <input type="text" readonly>
+            </div>
+            <div class="content-copy">
+              <img src="svg/copy.svg" alt="">
+            </div>
+          </div>
+          <div class="content-params-lenght-upper-number-simbol">
+            <div class="content-params-lenght">
+              <div class="params-lenght-span">
+                <label for="range">Longitud:</label>
+                <span id="span-range"></span>
+              </div>
+              <input id="range" type="range" min="6" max="25" value="8">
+            </div>
+            <div class="content-params content-params-uppercase">
+              <label class="switch content-params-uppercase-switch">
+                <input class="switch-verify" id="uppercase-switch" type="checkbox" checked>
+                <span class="slider"></span>
+              </label>
+              <span class="content-params-description-span">Mayúsculas</span>
+            </div>
+            <div class="content-params content-params-number">
+              <label class="switch content-params-number-switch">
+                <input class="switch-verify" id="number-switch" type="checkbox" checked>
+                <span class="slider"></span>
+              </label>
+              <span class="content-params-description-span">Números</span>
+            </div>
+            <div class="content-params content-params-simbol">
+              <label class="switch content-params-simbol-switch">
+                <input class="switch-verify" id="simbol-switch" type="checkbox" checked>
+                <span class="slider"></span>
+              </label>
+              <span class="content-params-description-span">Símbolos</span>
+            </div>
+          </div>
+          <div class="container-button">
+            
+            <button><img class="reload-button" src="svg/reload.svg" alt="SVG de recarga">Generar contraseña</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

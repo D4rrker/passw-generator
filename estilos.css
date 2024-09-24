@@ -1,0 +1,314 @@
+:root{
+  --primary-color: rgb(94 234 212);
+  --secondary-color: rgb(13 148 136);
+  --hover-color-button: rgb(15 118 110);
+}
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom right, rgb(126 34 206), rgb(49 46 129));
+  z-index: -100;
+}
+
+.bg-main{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  overflow: hidden;
+  z-index: -100;
+}
+
+#main-container{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.container{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem 0;
+  position: relative;
+  max-width: 32rem;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
+  border-radius: .5rem;
+  background-color: rgba(255, 255, 255, 0.151);
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+.container-header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem 0;
+  
+  /* Estilos para el título del header */
+  .container-header-title{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    /* Estilos para el título */
+    h1{
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: center;
+      color: white;
+    }
+  }
+}
+
+.container-content{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem 0;
+}
+
+.content-input-copy{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0 1rem;
+
+  /* Estilos para el input y el botón de copiar */
+
+  .content-input{
+    width: 100%;
+
+    /* Estilos para el input */
+    input{
+      width: 100%;
+      height: 2.5rem;
+      padding: .5rem;
+      border-radius: 1rem;
+      background-color: rgba(255, 255, 255, 0.205);
+      border: none;
+      border: 2px solid rgb(216 180 254);
+      font-size: 1.1rem;
+      color: rgb(255, 255, 255);
+      text-align: center;
+    }
+  }
+
+  .content-input > input:focus{
+    outline: none;
+  }
+
+  .content-copy{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 2.5rem;
+    min-height: 2.5rem;
+    border-radius: .5rem;
+  }
+
+  .content-copy:hover{
+    background-color: rgba(0, 0, 0, 0.212);
+  }
+
+  /* Estilos para el botón de copiar al estar desactivado */
+  .disabled{
+    opacity: .5;
+    cursor: not-allowed;
+  }
+}
+
+.content-params-lenght-upper-number-simbol{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem 0;
+
+  /* Estilos para los inputs */
+  .content-params-lenght{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem 0;
+    width: 100%;
+
+    .params-lenght-span{
+
+      /* Estilos para el label */
+      label{
+        font-size: .9rem;
+        font-weight: 500;
+        color: rgb(216 180 254);
+      }
+
+      /* Estilos para el span */
+      span{
+        font-size: .9rem;
+        font-weight: 400;
+        color: rgb(216 180 254);
+      }
+    }
+    
+
+    input{
+      cursor: pointer;
+    }
+  }
+}
+
+.content-params{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  
+  /* Estilos para los spans */
+  span{
+    color: white;
+    font-size: .9rem;
+    font-weight: 400;
+  }
+}
+
+.container-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 2.5rem;
+
+  /* Estilos para el botón */
+  button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 .5rem;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 1rem;
+    background: linear-gradient(to right, rgb(168 85 247), rgb(79 70 229));
+    color: rgb(255 255 255);
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .reload-button{
+    transition: transform .5s ease-in-out;
+  }
+
+  button:hover{
+    background: linear-gradient(to right, rgb(147 51 234), rgb(67 56 202));
+  }
+
+  button:hover .reload-button{
+    transform: rotate(-360deg);
+  }
+}
+
+/* Alerta de copiado */
+.content-copy-alert{
+  position: absolute;
+  top: -3rem;
+  left: 0;
+  width: 100%;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Estilos para el span */
+  span{
+    color: rgb(240, 240, 240);
+    background-color: rgba(0, 0, 0, 0.795);
+    border-radius: .3rem;
+    padding: 6px 10px;
+  }
+}
+
+.container-span-error{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 2.5rem;
+  margin-top: 1rem;
+  
+  /* Estilos para el span */
+  span{
+    color: rgb(240, 240, 240);
+    background-color: rgba(0, 0, 0, 0.795);
+    border-radius: .3rem;
+    padding: 6px 10px;
+    font-size: .9rem;
+    font-weight: 400;
+  }
+}
+
+
+/* -------------- Switch -------------- */
+
+/* El switch - la caja del slider switch */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 3.5rem;
+  height: 1.9rem;
+}
+
+/* Ocultar el checkbox por defecto */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* El slider */
+.slider {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  border: 1px solid #c9c9c9;
+  border-radius: 50px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4rem;
+  width: 1.4rem;
+  left: .2rem;
+  background-color: white;
+  border-radius: inherit;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.switch input:checked + .slider {
+  background-color: #131313c5;
+  border-color: transparent;
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(1.6rem);
+}
